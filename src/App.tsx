@@ -8,6 +8,7 @@ const setCount = () => {
 
 const App = () => {
   const count = useCounterStore((state) => state.count);
+  console.log('count', count)
 
   return <OtherComponent count={count} />;
 };
@@ -22,14 +23,10 @@ const OtherComponent = ({ count }: { count: number }) => {
 
   return (
     <div>
-      <p>Zustand counter</p>
-      <br />
+      {count}
       <div>
-        <button onClick={incrementAsync}>Increment</button>
-        <br />
+        <button onClick={incrementAsync}>IncrementAsync</button>
         <button onClick={decrement}>Decrement</button>
-        <br />
-        {count}
       </div>
     </div>
   );
